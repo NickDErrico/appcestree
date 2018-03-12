@@ -7,6 +7,7 @@ import About from './components/About';
 import UserDash from './components/UserDash';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import NewProject from './components/NewProject';
 
 
 class App extends Component {
@@ -20,7 +21,9 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/user" component={UserDash} />
-            <Route exact path="/about" component={About} />
+            <Route path="/about" component={About} />
+            <Route path="/new" component={NewProject} />
+
           </Switch>
         </div>
       </Router>

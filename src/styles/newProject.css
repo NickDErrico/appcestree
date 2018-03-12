@@ -1,0 +1,18 @@
+#main-display {
+  background-color: purple;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: 25% 100px auto;
+}
+
+#left-display {
+  background-color: yellow;
+}
+
+#right-display {
+  background-color: cyan;
+}
+
+#initial-component {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
