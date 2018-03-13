@@ -1,7 +1,9 @@
 import React from 'react';
 import { Card, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { connect } from 'react-redux';
 
 const Component = (props) => {
+  console.log('props in component', props);
   return (
     <Card id='initial-component'>
       <p>App</p>
@@ -20,4 +22,8 @@ const Component = (props) => {
   )
 }
 
-export default Component;
+const mapStateToProps = state => ({
+  components: state.components
+})
+
+export default connect(mapStateToProps, null)(Component);

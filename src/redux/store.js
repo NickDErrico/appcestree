@@ -4,11 +4,13 @@ import components from './components.reducers';
 import users from './users.reducers';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
   users,
   components,
-  projects
+  projects,
+  form: formReducer
 })
 
 export default () => {
