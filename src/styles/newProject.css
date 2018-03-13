@@ -2,7 +2,7 @@
   align-items: center;
   background-color: purple;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: auto;
   grid-row-gap: 1em;
   text-align: center;
 }

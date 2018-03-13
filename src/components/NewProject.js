@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Row, Col, Card, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import '../styles/newProject.css';
+import ComponentList from './ComponentList';
 
-class NewProject extends Component {
+class NewProject extends React.Component {
 
   render () {
     return (
@@ -11,20 +12,7 @@ class NewProject extends Component {
             Left Display
           </Col>
           <Col md={6} id='main-display' style={{display:'grid'}}>
-            <Card id='initial-component'>
-              <p>App</p>
-              <p>Stateful: true</p>
-              <p>Parent: none</p>
-              <UncontrolledDropdown>
-                <DropdownToggle caret>
-                  Children :
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem>TEST 1</DropdownItem>
-                  <DropdownItem>TEST 2</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Card>
+            <ComponentList />
             <Card id='initial-component-two'>
               <p>App</p>
               <p>Stateful: true</p>
