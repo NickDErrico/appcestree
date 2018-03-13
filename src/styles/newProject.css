@@ -1,10 +1,5 @@
 #main-display {
-  align-items: center;
   background-color: purple;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto;
-  grid-row-gap: 1em;
-  text-align: center;
 }
 
 #left-display {
@@ -24,12 +19,12 @@
   background-color: cyan;
 }
 
-#initial-component {
+/* #initial-component {
   grid-column: 5 / span 4;
   grid-row: 1 / span 2;
-}
+} */
 
-#initial-component-two {
+/* #initial-component-two {
   grid-column: 2 / span 4;
   grid-row: 3 / span 2;
 }
@@ -37,4 +32,4 @@
 #initial-component-three {
   grid-column: 8 / span 4;
   grid-row: 3 / span 2;
-}
+} */

@@ -1,11 +1,19 @@
 import React from 'react';
 import { Card, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
+import { addComponent } from '../redux/components.actions';
+import { bindActionCreators } from 'redux';
 
 const Component = (props) => {
-  console.log('props in component', props);
+
+  // function renderComponentCreator() {
+  //   console.log('hello');
+  // }
   return (
-    <Card id='initial-component'>
+    <Card style={{
+      gridColumn: `${props.gridCol} / span ${props.colSpan}`,
+      gridRow: `${props.gridRow} / span ${props.rowSpan}`
+    }}>
       <p>App</p>
       <p>Stateful: true</p>
       <p>Parent: none</p>
@@ -14,8 +22,7 @@ const Component = (props) => {
           Children :
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem>TEST 1</DropdownItem>
-          <DropdownItem>TEST 2</DropdownItem>
+          <DropdownItem >Add Child</DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </Card>
@@ -26,4 +33,8 @@ const mapStateToProps = state => ({
   components: state.components
 })
 
-export default connect(mapStateToProps, null)(Component);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  addComponent
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Component);

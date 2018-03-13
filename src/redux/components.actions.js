@@ -11,7 +11,6 @@ export const fetchComponents = () => {
     try {
       let response = await fetch(`${BASE_URL}/components`);
       let components = await response.json();
-      console.log('components in actions', components);
       dispatch({
         type: FETCH_COMPONENTS_SUCCESS,
         payload: components

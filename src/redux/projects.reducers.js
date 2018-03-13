@@ -5,7 +5,9 @@ import {
   ADD_PROJECT_FAILED
 } from './projects.actions';
 
-export default (state = [], action) => {
+const initialState = {}
+
+export default (state = initialState, action) => {
   switch(action.type) {
     case FETCH_PROJECTS_SUCCESS:
       return [...action.payload]

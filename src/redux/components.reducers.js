@@ -5,7 +5,12 @@ import {
   ADD_COMPONENT_FAILED
 } from './components.actions';
 
-export default (state = [], action) => {
+const initialState = {
+  allComponents: [],
+  currComponent: {}
+}
+
+export default (state = initialState, action) => {
   switch(action.type) {
     case FETCH_COMPONENTS_SUCCESS:
       return [...action.payload.data]
