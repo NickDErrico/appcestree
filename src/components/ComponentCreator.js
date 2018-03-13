@@ -14,11 +14,11 @@ let ComponentCreator = (props) => {
           <Field name='name' component='input' type='text' />
         </div>
         <div>
-          <label htmlFor='parents'>Parent Components:</label>
-          <Field name='parents' component='select' type='text' />
+          <label htmlFor='parent_id'>Parent Component:</label>
+          <Field className='form-control' name='parent_id' component='select' />
         </div>
         <div>
-          <label htmlFor='children'>Children Components:</label>
+          <label htmlFor='children'>Child Components:</label>
           <Field name='children' component='input' type='text' />
         </div>
         <div>
@@ -37,12 +37,13 @@ let ComponentCreator = (props) => {
   )
 }
 
+let mapStateToProps = state => ({
+  components: state.components,
+  parentComponent: state.parent_child_component
+})
+
 ComponentCreator = reduxForm({
   form: 'components'
 })(ComponentCreator)
-
-let mapStateToProps = state => ({
-  components: state.components
-})
 
 export default connect(mapStateToProps, null)(ComponentCreator);

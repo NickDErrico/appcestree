@@ -15,8 +15,8 @@ const Component = (props) => {
       gridRow: `${props.gridRow} / span ${props.rowSpan}`
     }}>
       <p>App</p>
-      <p>Stateful: true</p>
-      <p>Parent: none</p>
+      {/* <p>Stateful: true</p>
+      <p>Parent: none</p> */}
       <UncontrolledDropdown>
         <DropdownToggle caret>
           Children :

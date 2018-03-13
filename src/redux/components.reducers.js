@@ -13,7 +13,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch(action.type) {
     case FETCH_COMPONENTS_SUCCESS:
-      return [...action.payload.data]
+      return [...state, action.payload]
     case FETCH_COMPONENTS_FAILED:
       return action.payload
     case ADD_COMPONENT_SUCCESS:

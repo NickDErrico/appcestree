@@ -16,20 +16,20 @@ const ComponentList = (props) => {
       <Component
         gridRow={1}
         rowSpan={2}
-        gridCol={5}
-        colSpan={4}
+        gridCol={6}
+        colSpan={2}
       />
       <Component
         gridRow={3}
         rowSpan={2}
-        gridCol={2}
-        colSpan={4}
+        gridCol={4}
+        colSpan={2}
       />
       <Component
         gridRow={3}
         rowSpan={2}
         gridCol={8}
-        colSpan={4}
+        colSpan={2}
       />
     </div>
   )
