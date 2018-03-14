@@ -4,13 +4,13 @@ export const FETCH_PROJECTS_FAILED = 'FETCH_PROJECTS_FAILED';
 export const ADD_PROJECT_SUCCESS = 'ADD_PROJECT_SUCCESS';
 export const ADD_PROJECT_FAILED = 'ADD_PROJECT_FAILED';
 
-const BASE_URL = `http://localhost:8000`;
+const BASE_URL = `http://localhost:8000/projects`;
 
 
 export const fetchProjects = () => {
   return async dispatch => {
     try {
-      let response = await fetch(`${BASE_URL}/projects`);
+      let response = await fetch(`${BASE_URL}`);
       let projects = await response.json();
       dispatch({
         type: FETCH_PROJECTS_SUCCESS,
@@ -28,7 +28,7 @@ export const fetchProjects = () => {
 export const addProject = newProject => {
   return async dispatch => {
     try {
-      let response = await fetch(`${BASE_URL}/projects`, {
+      let response = await fetch(`${BASE_URL}`, {
         method: 'post',
         body: JSON.stringify(newProject),
         headers: {

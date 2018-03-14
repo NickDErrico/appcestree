@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Card, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
+import { addComponent } from '../redux/components.actions';
 
 let ComponentCreator = (props) => {
   console.log('props in componentCreator', props);
@@ -37,7 +38,7 @@ let ComponentCreator = (props) => {
   )
 }
 
-let mapStateToProps = state => ({
+const mapStateToProps = state => ({
   components: state.components,
   parentComponent: state.parent_child_component
 })
@@ -45,5 +46,9 @@ let mapStateToProps = state => ({
 ComponentCreator = reduxForm({
   form: 'components'
 })(ComponentCreator)
+
+// const mapDispatchToProps = dispatch => ({
+//   addComponent
+// }, dispatch)
 
 export default connect(mapStateToProps, null)(ComponentCreator);

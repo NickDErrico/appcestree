@@ -4,12 +4,12 @@ export const FETCH_COMPONENTS_FAILED = 'FETCH_COMPONENTS_FAILED';
 export const ADD_COMPONENT_SUCCESS = 'ADD_COMPONENT_SUCCESS';
 export const ADD_COMPONENT_FAILED = 'ADD_COMPONENT_FAILED';
 
-const BASE_URL = `http://localhost:8000`;
+const BASE_URL = `http://localhost:8000/components`;
 
 export const fetchComponents = () => {
   return async dispatch => {
     try {
-      let response = await fetch(`${BASE_URL}/components`);
+      let response = await fetch(`${BASE_URL}/1`);
       let components = await response.json();
       dispatch({
         type: FETCH_COMPONENTS_SUCCESS,
@@ -27,7 +27,7 @@ export const fetchComponents = () => {
 export const addComponent = newComponent => {
   return async dispatch => {
     try {
-      let response = await fetch(`${BASE_URL}/components`, {
+      let response = await fetch(`${BASE_URL}`, {
         method: 'post',
         body: JSON.stringify(newComponent),
         headers: {

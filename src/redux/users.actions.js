@@ -4,12 +4,12 @@ export const FETCH_USERS_FAILED = 'FETCH_USERS_FAILED';
 export const ADD_USER_SUCCESS = 'ADD_USER_SUCCESS';
 export const ADD_USER_FAILED = 'ADD_USER_FAILED';
 
-const BASE_URL = `http://localhost:8000`;
+const BASE_URL = `http://localhost:8000/users`;
 
 export const fetchUsers = () => {
   return async dispatch => {
     try {
-      let response = await fetch(`${BASE_URL}/users`);
+      let response = await fetch(`${BASE_URL}`);
       let users = await response.json();
       dispatch({
         type: FETCH_USERS_SUCCESS,
@@ -27,7 +27,7 @@ export const fetchUsers = () => {
 export const addUser = newUser => {
   return async dispatch => {
     try {
-      let response = await fetch(`${BASE_URL}/users`, {
+      let response = await fetch(`${BASE_URL}`, {
         method: 'post',
         body: JSON.stringify(newUser),
         headers: {
