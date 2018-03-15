@@ -3,12 +3,13 @@ import { Card, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem 
 
 const Component = (props) => {
 
+  console.log('props in c', props)
   return (
     <Card style={{
       gridColumn: `${props.gridCol} / span ${props.colSpan}`,
       gridRow: `${props.gridRow} / span ${props.rowSpan}`
     }}>
-      <p>App</p>
+      <p>{props.comp.name}</p>
       <UncontrolledDropdown>
         <DropdownToggle caret>
           Children :

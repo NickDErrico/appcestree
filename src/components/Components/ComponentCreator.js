@@ -1,11 +1,10 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Card, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Card } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addComponent } from '../redux/components.actions';
+import { addComponent } from '../../redux/components.actions';
 
 let ComponentCreator = (props) => {
-  console.log('props in componentCreator', props);
   const { handleSubmit } = props
   return (
     <Card id='current-component'>

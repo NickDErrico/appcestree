@@ -5,10 +5,7 @@ import {
   ADD_COMPONENT_FAILED
 } from './components.actions';
 
-const initialState = {
-  allComponents: [],
-  currComponent: {}
-}
+const initialState = [];
 
 export default (state = initialState, action) => {
   switch(action.type) {

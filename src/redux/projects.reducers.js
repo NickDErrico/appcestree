@@ -1,23 +1,40 @@
 import {
   FETCH_PROJECTS_SUCCESS,
   FETCH_PROJECTS_FAILED,
+  FETCH_SINGLE_PROJECT_SUCCESS,
+  FETCH_SINGLE_PROJECT_FAILED,
   ADD_PROJECT_SUCCESS,
   ADD_PROJECT_FAILED
 } from './projects.actions';
 
-const initialState = {}
+const initialState = {
+  currProject: {
+    components:[]
+  },
+  allProjects: []
+};
 
 export default (state = initialState, action) => {
   switch(action.type) {
     case FETCH_PROJECTS_SUCCESS:
-      return [...action.payload]
+      return {
+        ...state,
+        allProjects: action.payload
+      };
     case FETCH_PROJECTS_FAILED:
+      return action.payload;
+    case FETCH_SINGLE_PROJECT_SUCCESS:
+      return {
+        ...state,
+        currProject: action.payload[0]
+      };
+    case FETCH_SINGLE_PROJECT_FAILED:
       return action.payload
     case ADD_PROJECT_SUCCESS:
-      return [...state, action.payload]
+      return state;
     case ADD_PROJECT_FAILED:
-      return action.payload
+      return action.payload;
     default:
-      return state
+      return state;
   }
 }

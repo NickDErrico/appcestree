@@ -1,6 +1,9 @@
 export const FETCH_PROJECTS_SUCCESS = 'FETCH_PROJECTS_SUCCESS';
 export const FETCH_PROJECTS_FAILED = 'FETCH_PROJECTS_FAILED';
 
+export const FETCH_SINGLE_PROJECT_SUCCESS = 'FETCH_SINGLE_PROJECT_SUCCESS';
+export const FETCH_SINGLE_PROJECT_FAILED = 'FETCH_SINGLE_PROJECT_FAILED';
+
 export const ADD_PROJECT_SUCCESS = 'ADD_PROJECT_SUCCESS';
 export const ADD_PROJECT_FAILED = 'ADD_PROJECT_FAILED';
 
@@ -19,6 +22,24 @@ export const fetchProjects = () => {
     }catch(err) {
       dispatch({
         type: FETCH_PROJECTS_FAILED,
+        payload: err
+      })
+    }
+  }
+}
+
+export const fetchSingleProject = id => {
+  return async dispatch => {
+    try {
+      let response = await fetch(`${BASE_URL}/${id}`);
+      let projects = await response.json();
+      dispatch({
+        type: FETCH_SINGLE_PROJECT_SUCCESS,
+        payload: projects
+      })
+    }catch(err) {
+      dispatch({
+        type: FETCH_SINGLE_PROJECT_FAILED,
         payload: err
       })
     }

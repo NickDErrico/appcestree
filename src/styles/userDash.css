@@ -1,0 +1,4 @@
+.project-list-container {
+  display: inline-grid;
+  justify-content: center;
+}

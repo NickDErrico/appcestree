@@ -3,28 +3,31 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TopNav from './components/TopNav';
 import Home from './components/Home';
-import About from './components/About';
-import UserDash from './components/UserDash';
+import UserDash from './components/UserDash/UserDash';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import NewProject from './components/NewProject';
+import SingleProject from './components/Projects/SingleProject';
 
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div >
           <TopNav />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
-            <Route path="/signup" component={Signup} />
-            <Route path="/user" component={UserDash} />
-            <Route path="/about" component={About} />
-            <Route path="/new" component={NewProject} />
+          <div style={{
+            gridTemplateColumns: 'repeat(12, 1fr)',
+            gridTemplateRows: 'repeat(12, 1fr)',
+          }}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/user" component={UserDash} />
+              <Route path='/projects/:id' component={SingleProject} />
+            </Switch>
+          </div>
 
-          </Switch>
         </div>
       </Router>
     )

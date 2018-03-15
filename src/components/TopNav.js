@@ -24,16 +24,7 @@ import React, { Component } from 'react';
         <div className="collapse navbar-collapse" id="navbarColor01">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="/Signup">Signup</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/Login">Login</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/User">User Dash</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/About">About</a>
+              <a className="nav-link" href="/User">My Dash</a>
             </li>
           </ul>
         </div>

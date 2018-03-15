@@ -6,10 +6,10 @@ export const ADD_COMPONENT_FAILED = 'ADD_COMPONENT_FAILED';
 
 const BASE_URL = `http://localhost:8000/components`;
 
-export const fetchComponents = () => {
+export const fetchComponents = (id) => {
   return async dispatch => {
     try {
-      let response = await fetch(`${BASE_URL}/1`);
+      let response = await fetch(`${BASE_URL}/${id}`);
       let components = await response.json();
       dispatch({
         type: FETCH_COMPONENTS_SUCCESS,
