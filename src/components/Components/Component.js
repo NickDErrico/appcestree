@@ -5,10 +5,13 @@ const Component = (props) => {
 
   console.log('props in c', props)
   return (
-    <Card style={{
-      gridColumn: `${props.gridCol} / span ${props.colSpan}`,
-      gridRow: `${props.gridRow} / span ${props.rowSpan}`
-    }}>
+    <Card
+      style={{
+      display: 'inline-block',
+      gridColumn: `4 / span 2`,
+      gridRow: `3 / span 2`
+    }}
+    >
       <p>{props.comp.name}</p>
       <UncontrolledDropdown>
         <DropdownToggle caret>

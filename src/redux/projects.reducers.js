@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
     case FETCH_SINGLE_PROJECT_SUCCESS:
       return {
         ...state,
-        currProject: action.payload[0]
+        components: action.payload[0]
       };
     case FETCH_SINGLE_PROJECT_FAILED:
       return action.payload

@@ -2,7 +2,8 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Card } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addComponent } from '../../redux/components.actions';
+// import { addComponent } from '../../redux/components.actions';
+// import { bindActionCreators } from 'redux';
 
 let ComponentCreator = (props) => {
   const { handleSubmit } = props
@@ -46,7 +47,7 @@ ComponentCreator = reduxForm({
   form: 'components'
 })(ComponentCreator)
 
-// const mapDispatchToProps = dispatch => ({
+// const mapDispatchToProps = dispatch => bindActionCreators({
 //   addComponent
 // }, dispatch)
 

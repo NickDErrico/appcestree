@@ -10,11 +10,11 @@ class ComponentList extends React.Component {
     if (!this.props.projectComponents) {
       return <div>Loading...</div>
     }else {
-      console.log('props in cl', this.props.projectComponents.children);
-      // let componentList = childrenArray.map(comp => <Component key={comp.id} comp={comp} />)
+      console.log('props in cl', this.props.projectComponents.children[0].parent_id);
+      let componentList = this.props.projectComponents.children.map((comp, idx) => <Component key={comp.id} comp={comp} idx={idx}/>)
       return (
         <div style={{
-          alignItems: 'center',
+          alignItems: 'space-evenly',
           backgroundColor: 'purple',
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',
@@ -26,13 +26,13 @@ class ComponentList extends React.Component {
           gridColumn: `6 / span 2`,
           gridRow: `1 / span 2`
         }}
-        //needs onClick for the component creator view
+        //needs onClick for the edit component in component creator view
         >
           <p>{this.props.projectComponents.name}</p>
               {/* needs onClick to add child to element and display in component creator view */}
               <Button>Add Child</Button>
         </Card>
-        {/* {componentList} */}
+        {componentList}
           {/* <Component
             gridRow={1}
             rowSpan={2}
@@ -58,8 +58,9 @@ class ComponentList extends React.Component {
 }
 
 function mapStateToProps(state){
+  console.log('state', state);
   return({
-    projectComponents: state.projects.currProject
+    projectComponents: state.projects.components
   })
 }
 
