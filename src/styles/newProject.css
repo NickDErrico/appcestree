@@ -1,35 +1,25 @@
-#main-display {
-  background-color: purple;
+#new-project-display {
+  background-image: linear-gradient(0.25turn, #aaa9a9, #d8d8d8, #aaa9a9);
 }
 
 #left-display {
   text-align: center;
-  background-color: yellow;
+  justify-content: center;
+}
+
+#main-display {
+  margin-top: 2.5%;
+}
+
+#right-display {
+  text-align: center;
   justify-content: center;
 }
 
 #current-component {
-  left: 52%;
+  left: 60%;
+  padding: 10px;
   position: relative;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
 }
-
-#right-display {
-  background-color: cyan;
-}
-
-/* #initial-component {
-  grid-column: 5 / span 4;
-  grid-row: 1 / span 2;
-} */
-
-/* #initial-component-two {
-  grid-column: 2 / span 4;
-  grid-row: 3 / span 2;
-}
-
-#initial-component-three {
-  grid-column: 8 / span 4;
-  grid-row: 3 / span 2;
-} */

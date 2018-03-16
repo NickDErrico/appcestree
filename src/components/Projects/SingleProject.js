@@ -3,6 +3,7 @@ import { Row, Col } from 'reactstrap';
 import '../../styles/newProject.css';
 import ComponentList from '../Components/ComponentList';
 import ComponentDetails from '../Components/ComponentDetails';
+import ComponentCreator from '../Components/ComponentCreator';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { fetchSingleProject } from '../../redux/projects.actions';
@@ -19,13 +20,13 @@ class NewProject extends React.Component {
     return (
         <Row className='new-project-display'>
           <Col md={3} id='left-display'>
-            <ComponentDetails onSubmit={this.submit}/>
+            <ComponentCreator />
           </Col>
           <Col md={6} id='main-display'>
             <ComponentList />
           </Col>
           <Col md={3} id='right-display'>
-            Right Display
+            <ComponentDetails onSubmit={this.submit}/>
           </Col>
         </Row>
     )

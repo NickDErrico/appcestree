@@ -15,7 +15,6 @@ class ComponentList extends React.Component {
       return (
         <div style={{
           alignItems: 'space-evenly',
-          backgroundColor: 'purple',
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',
           gridTemplateRows: 'auto',

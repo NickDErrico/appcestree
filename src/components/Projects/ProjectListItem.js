@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 
 const ProjectListItem = (props) => (
-    <Card onClick={() => props.history.push(`/project/${props.project.id}`)}>
+    <Card onClick={() => props.history.push(`/projects/${props.project.id}`)}>
       <p>{props.project.name}</p>
     </Card>
   )
