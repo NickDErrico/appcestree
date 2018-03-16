@@ -10,6 +10,7 @@ let ComponentCreator = (props) => {
   const { handleSubmit } = props
   return (
     <Card id='current-component'>
+      <h3>Component Editor:</h3>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='name'>Component Name:</label>
@@ -33,7 +34,7 @@ let ComponentCreator = (props) => {
           <label><Field name='is_route' component='input' type='radio' value='true'/> true </label>{' '}
           <label><Field name='is_route' component='input' type='radio' value='false'/> false </label>{' '}
         </div>
-        <button type='submit'>Submit</button>
+        <button className='btn btn-primary' type='submit'>Submit</button>
       </form>
     </Card>
   )

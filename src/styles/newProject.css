@@ -1,25 +1,29 @@
 #new-project-display {
-  background-image: linear-gradient(0.25turn, #aaa9a9, #d8d8d8, #aaa9a9);
+  /* height: 100vh; */
 }
 
 #left-display {
+  background-color: #ddd;
   text-align: center;
   justify-content: center;
+  height: 100vh;
 }
 
 #main-display {
-  margin-top: 2.5%;
+  background-color: #eee;
 }
 
 #right-display {
+  background-color: #ddd;
+  padding: 0;
   text-align: center;
   justify-content: center;
 }
 
 #current-component {
-  left: 60%;
+  left: 51.5%;
   padding: 10px;
   position: relative;
-  top: 55%;
+  top: 45%;
   transform: translate(-50%, -50%);
 }

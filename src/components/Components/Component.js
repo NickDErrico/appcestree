@@ -40,6 +40,7 @@ const Component = (props) => {
   console.log('props in c', props)
   return (
     <Card
+      className='border-success mb-3'
       style={spacingStyle}
       onClick={() => props.selectComponent(props.comp.id)}
     >

@@ -38,9 +38,9 @@ class Login extends React.Component {
           </ModalBody>
           <ModalFooter>
             <Link to='/user'>
-              <Button color="primary" onClick={this.toggle}>Submit</Button>{' '}
+              <Button color="success" onClick={this.toggle}>Submit</Button>{' '}
             </Link>
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+            <Button color="primary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>
