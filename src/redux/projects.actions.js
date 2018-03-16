@@ -7,6 +7,8 @@ export const FETCH_SINGLE_PROJECT_FAILED = 'FETCH_SINGLE_PROJECT_FAILED';
 export const ADD_PROJECT_SUCCESS = 'ADD_PROJECT_SUCCESS';
 export const ADD_PROJECT_FAILED = 'ADD_PROJECT_FAILED';
 
+export const SELECT_COMPONENT = 'SELECT_COMPONENT';
+
 const BASE_URL = `http://localhost:8000/projects`;
 
 
@@ -66,6 +68,21 @@ export const addProject = newProject => {
         type: ADD_PROJECT_FAILED,
         payload: err
       })
+    }
+  }
+}
+
+export const selectComponent = id => {
+  return async dispatch => {
+    try {
+      let response = await fetch(`http://localhost:8000/components/single/${id}`)
+      let comp = await response.json()
+      dispatch({
+        type: SELECT_COMPONENT,
+        payload: comp
+      })
+    }catch(err) {
+      return err
     }
   }
 }

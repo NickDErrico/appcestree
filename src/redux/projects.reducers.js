@@ -4,14 +4,16 @@ import {
   FETCH_SINGLE_PROJECT_SUCCESS,
   FETCH_SINGLE_PROJECT_FAILED,
   ADD_PROJECT_SUCCESS,
-  ADD_PROJECT_FAILED
+  ADD_PROJECT_FAILED,
+  SELECT_COMPONENT
 } from './projects.actions';
 
 const initialState = {
   currProject: {
     components:[]
   },
-  allProjects: []
+  allProjects: [],
+  selectedComponent: {}
 };
 
 export default (state = initialState, action) => {
@@ -34,6 +36,11 @@ export default (state = initialState, action) => {
       return state;
     case ADD_PROJECT_FAILED:
       return action.payload;
+    case SELECT_COMPONENT:
+      return {
+        ...state,
+        selectedComponent: {...action.payload}
+      };
     default:
       return state;
   }
