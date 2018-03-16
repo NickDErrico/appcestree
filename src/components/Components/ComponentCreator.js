@@ -6,12 +6,14 @@ import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 
 let ComponentCreator = (props) => {
-  console.log('props in cd', props);
+  function addEditComponent() {
+    // ...blah
+  }
   const { handleSubmit } = props
   return (
     <Card id='current-component'>
       <h3>Component Editor </h3>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit(addEditComponent)}>
         <FormGroup>
           <label htmlFor='name'>Component Name: &nbsp;</label>
           <Field className='form-control' name='name' component='input' type='text' />
@@ -32,28 +34,28 @@ let ComponentCreator = (props) => {
         </FormGroup> */}
         <FormGroup >
           <label htmlFor='is_stateful'>Is stateful: &nbsp;</label>
-          <label><Field name='is_stateful' component='input' type='radio' value='true'/> true </label>{' '}
-          <label><Field name='is_stateful' component='input' type='radio' value='false'/> false </label>{' '}
+          <label><Field name='is_stateful' component='input' type='radio' value={true}/> true </label>{' '}
+          <label><Field name='is_stateful' component='input' type='radio' value={false}/> false </label>{' '}
         </FormGroup>
         <FormGroup>
           <label htmlFor='is_route'>Needs a route: &nbsp;</label>
-          <label><Field name='is_route' component='input' type='radio' value='true'/> true </label>{' '}
-          <label><Field name='is_route' component='input' type='radio' value='false'/> false </label>{' '}
+          <label><Field name='is_route' component='input' type='radio' value={true}/> true </label>{' '}
+          <label><Field name='is_route' component='input' type='radio' value={false}/> false </label>{' '}
         </FormGroup>
         <FormGroup>
-          <label htmlFor='is_route'>Has Props: &nbsp;</label>
-          <label><Field name='is_route' component='input' type='radio' value='true'/> true </label>{' '}
-          <label><Field name='is_route' component='input' type='radio' value='false'/> false </label>{' '}
+          <label htmlFor='has_props'>Has Props: &nbsp;</label>
+          <label><Field name='has_props' component='input' type='radio' value={true}/> true </label>{' '}
+          <label><Field name='has_props' component='input' type='radio' value={false}/> false </label>{' '}
         </FormGroup>
         <FormGroup>
-          <label htmlFor='is_route'>Has Children: &nbsp;</label>
-          <label><Field name='is_route' component='input' type='radio' value='true'/> true </label>{' '}
-          <label><Field name='is_route' component='input' type='radio' value='false'/> false </label>{' '}
+          <label htmlFor='has_children'>Has Children: &nbsp;</label>
+          <label><Field name='has_children' component='input' type='radio' value={true}/> true </label>{' '}
+          <label><Field name='has_children' component='input' type='radio' value={false}/> false </label>{' '}
         </FormGroup>
         <FormGroup>
-          <label htmlFor='is_route'>Lifecycle Methods: &nbsp;</label>
-          <label><Field name='is_route' component='input' type='radio' value='true'/> true </label>{' '}
-          <label><Field name='is_route' component='input' type='radio' value='false'/> false </label>{' '}
+          <label htmlFor='lifecycle'>Lifecycle Methods: &nbsp;</label>
+          <label><Field name='lifecycle' component='input' type='radio' value={true}/> true </label>{' '}
+          <label><Field name='lifecycle' component='input' type='radio' value={false}/> false </label>{' '}
         </FormGroup>
         <button className='btn btn-danger' type='submit'>Submit</button>
       </Form>
@@ -63,14 +65,18 @@ let ComponentCreator = (props) => {
 
 
 ComponentCreator = reduxForm({
-  form: 'components'
+  form: 'components',
+  enableReinitialize : true
 })(ComponentCreator)
 
-const mapStateToProps = state => ({
-  initialValues: state.projects.selectedComponent,
-  components: state.components,
-  parentComponent: state.parent_child_component
-})
+const mapStateToProps = state => {
+  console.log('selectedComp', state.projects.selectedComponent)
+  return ({
+    initialValues: state.projects.selectedComponent,
+    components: state.components,
+    parentComponent: state.parent_child_component
+  })
+}
 // const mapDispatchToProps = dispatch => bindActionCreators({
 //   addComponent
 // }, dispatch)

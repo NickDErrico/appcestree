@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 
 let ComponentDetails = (props) => {
-  console.log('props in cd', props);
   return (
     <div>
       <h3 className='text-center'>Component Details </h3>
