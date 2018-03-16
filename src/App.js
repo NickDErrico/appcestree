@@ -15,10 +15,7 @@ class App extends Component {
       <Router>
         <div >
           <TopNav />
-          <div style={{
-            gridTemplateColumns: 'repeat(12, 1fr)',
-            gridTemplateRows: 'repeat(12, 1fr)',
-          }}>
+          <div>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />

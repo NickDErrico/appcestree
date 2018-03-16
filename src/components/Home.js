@@ -5,16 +5,7 @@ import '../styles/home.css';
 class Home extends Component {
   render () {
     return (
-      <div
-        className='container'
-        style={{
-          alignItems: 'center',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(12, 1fr)',
-          gridTemplateRows: 'repeat(12, 1fr)',
-          gridRowGap: '1em',
-          textAlign: 'center'
-        }}>
+      <div>
         <div className='container-signup'>
           <Signup style={{
             gridColumn: `4 / span 4`,

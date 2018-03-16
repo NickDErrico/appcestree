@@ -21,7 +21,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <Button color="danger" onClick={this.toggle}>Login</Button>
+        <Button style={{marginBottom: '10px'}} color="danger" onClick={this.toggle}>Already have an account? Click Here</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Login</ModalHeader>
           <ModalBody>
@@ -40,7 +40,7 @@ class Login extends React.Component {
             <Link to='/user'>
               <Button color="success" onClick={this.toggle}>Submit</Button>{' '}
             </Link>
-            <Button color="danger" onClick={this.toggle}>Cancel</Button>
+            <Button color="primary" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>
