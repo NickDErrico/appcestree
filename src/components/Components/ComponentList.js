@@ -13,7 +13,7 @@ class ComponentList extends React.Component {
       let componentList = this.props.projectComponents.map((comp, idx) => <Component key={idx} comp={comp} idx={idx}/>)
       return (
         <div>
-          <h3 className='text-center'>Tree View:</h3>
+          <h3 className='text-center'>Tree View </h3>
           <div style={{
             alignItems: 'space-evenly',
             display: 'grid',

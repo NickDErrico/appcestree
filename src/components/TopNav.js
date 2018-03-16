@@ -18,7 +18,7 @@ import React, { Component } from 'react';
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-danger">
         {/* <img className='navbar-logo' src='../../../public/ic_device_hub_black_24px.svg'></img> */}
         <a className="navbar-brand" href="/">Appcestry</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">

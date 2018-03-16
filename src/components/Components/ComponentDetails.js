@@ -7,10 +7,10 @@ let ComponentDetails = (props) => {
   console.log('props in cd', props);
   return (
     <div>
-      <h3 className='text-center'>Component Details:</h3>
+      <h3 className='text-center'>Component Details </h3>
       <table class="table">
         <thead>
-          <tr class='table-primary'>
+          <tr class='table-danger'>
             <th scope="col">Name</th>
             <th scope="col">Has State?</th>
             <th scope="col">Has Route?</th>

@@ -40,7 +40,7 @@ class Login extends React.Component {
             <Link to='/user'>
               <Button color="success" onClick={this.toggle}>Submit</Button>{' '}
             </Link>
-            <Button color="primary" onClick={this.toggle}>Cancel</Button>
+            <Button color="danger" onClick={this.toggle}>Cancel</Button>
           </ModalFooter>
         </Modal>
       </div>

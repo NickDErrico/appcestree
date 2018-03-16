@@ -35,7 +35,7 @@ class Signup extends React.Component {
         </Form>
         <Login />
         <Button color="success" onClick={this.toggle}>Submit</Button>{' '}
-        <Button color="primary" onClick={this.toggle}>Cancel</Button>
+        <Button color="danger" onClick={this.toggle}>Cancel</Button>
       </div>
     );
   }
